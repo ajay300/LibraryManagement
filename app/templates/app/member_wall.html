@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Member Wall{% endblock title %}
+
+{% block content %}
+
+<center>
+    <h3 style=" margin-bottom: 0px;" class='alert alert-success'>Welcome to Library Management System</h3>
+</center>
+<div class="jumbotron" style="    margin-bottom: 0px;">
+    <h1 class="display-4">Hello {{user.first_name}} !</h1>
+    <p class="lead">As you are Member, you can see how many book you have taken from library with fine and many more
+        ...!
+    </p>
+    <hr class="my-4">
+    <p>Option Available For You : </p>
+    <div class="options" style="text-align:center">
+        
+        {% for x in member  %}
+        <a href="{% url 'profile' x.id %}" class="btn btn-success btn-lg active" style="border-radius: 30%;" role="button"
+            aria-pressed="true">Your Profile</a><br><br>
+        {% endfor %}
+        <a href="{% url 'member_issued_books'%}" class="btn btn-primary btn-lg active" style="border-radius: 0%;" role="button"
+            aria-pressed="true">View issued book to you</a><br><br>
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+
+
+{% block content %}
+
+<div>
+    <a href="{{request.META.HTTP_REFERER}}"><button type="button" class="btn btn-outline-danger">Go Back</button></a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mb-4 mb-sm-5">
+            <div class="card card-style1 border-0">
+                <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                            <img src="{{member.profile_pic.url}}" alt="" width="300" height="300">
+                        </div>
+                        <div class="col-lg-6 px-xl-10">
+                            <div class="bg-primary d-lg-inline-block py-1-9 px-1-9 px-sm-3 mb-1-9 rounded">
+                                <h3 class="h2 text-white mb-0">{{member.first_name}} {{member.last_name}}</h3><br>
+                                
+                            </div><br>
+                            <hr>
+                            <ul class="list-unstyled mb-1-9">
+                                <li class="mb-2 mb-xl-3 display-28">
+                                    <span class="display-26 text-secondary me-2 font-weight-600">username :</span> <i><b> {{member.user.username|upper}}</b></i>
+                                </li>
+                                <li class="mb-2 mb-xl-3 display-28">
+                                    <span class="display-26 text-secondary me-2 font-weight-600">Roll NO :</span><i> <b> {{member.roll_no}}</b></i>
+                                </li>
+                                <li class="mb-2 mb-xl-3 display-28">
+                                    <span class="display-26 text-secondary me-2 font-weight-600">Standard :</span> <i><b></b>{{member.std}}</b></i>
+                                </li>
+                                <li class="mb-2 mb-xl-3 display-28">
+                                    <span class="display-26 text-secondary me-2 font-weight-600">Branch : </span><i><b>{{member.branch}}</b></i>
+                                </li>
+                                <li class="display-28">
+                                    <span class="display-26 text-secondary me-2 font-weight-600">Issued Book Name : </span><i><b>{{book.title}}</b></i>
+                                </li>
+                            </ul>
+                            <ul class="social-icon-style1 list-unstyled mb-0 ps-0">
+                                <li></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                                <li><a href=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col-lg-12 mb-4 mb-sm-5">
+            <div>
+                <span class="section-title text-primary mb-3 mb-sm-4">About me:</span>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+{% endblock %}
+{% block content %}
+<div>
+    <div class="text-center">
+        <h1 class="display-4">
+           <i> Add Book </i>
+        </h1>
+    </div>
+    <hr>
+
+    <div class="container">
+        <form method="POST" class="shadow-2">
+            {% csrf_token %}
+            {% for f in form %}
+            <div class="row mt-1">
+                <b><i>{{f.label_tag}} {{f}}</i></b> <small class="text-danger">{{f.errors|striptags}}</small> <br>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-outline-primary mt-4">Add Book</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

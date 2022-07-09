@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile Form{% endblock title %}
+
+{% block content %}
+
+<div>
+    <div>
+        <h1>Profile Form</h1>
+    </div>
+    <div>
+        <form action="" method="post" class="shadow p-4">
+            {% csrf_token %}
+            {{form.as_p}}
+            {% comment %} <a href="{% url 'profile-form' %}"><button>Submit</button></a> {% endcomment %}
+            <input type="submit" value="Done" class="btn btn-success">
+        </form>
+    </div>
+    
+
+</div>
+    
+
+
+
+
+{% endblock content %}

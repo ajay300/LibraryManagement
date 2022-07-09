@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<style media="screen">
+  .jumbotron {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-image: url("{% static 'app/images/banner/library3.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .jumbotron h1 {
+    text-align: center;
+  }
+
+  .alert {
+    margin: 0px;
+  }
+
+  .glow {
+    font-size: 90px;
+    color: #070606;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+</style>
+
+
+<div class="jumbotron" style="margin-bottom: 0px;margin-top: 1px;">
+  <br>
+  <h1 class="display-1 glow"><b>Library Management System</b></h1>
+  <br><br>
+  <h3 class="text-center" style="color:rgb(8, 8, 8);">Built using Python Django</h3>
+  <br><br><br><br><br>
+  <div class="lead">
+    <p class="lead text-center">
+      <a class="btn btn-success btn-lg" href="{% url 'member-register' %}" role="button">Sign Up as Student</a>
+    </p>
+  </div>
+
+  <br><br>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-6">
+      <img src="{% static 'app/images/icon/admin_pic.png' %}" width="50%" height="50%" alt=""><br><br>
+      <a class="btn btn-outline-danger btn-lg" style="text-align:center" href="{% url 'admin-click' %}">Admin</a>
+    </div>
+
+    <div class="col-lg-6">
+      <img src="{% static 'app/images/icon/member_pic.png' %}" width="50%" height="50%" alt=""><br><br>
+      <a class="btn btn-outline-primary btn-lg" href="{% url 'member-click' %}">Member</a>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

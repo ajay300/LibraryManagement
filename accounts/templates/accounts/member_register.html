@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="signup-form">
+    <form method="post" class="shadow p-4">
+
+        <center>
+            <h2>Student Signup</h2>
+        </center>
+
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="form-group text-center">
+            <label class="control-label col-xs-4">{{ field.label_tag }}</label>
+            <div class="col-xs-8">
+                {{ field }}
+            </div>
+        </div>
+        {% endfor %}
+        
+
+        <div class="form-group text-center">
+            <div class="col-xs-8 col-xs-offset-4">
+                <button type="submit" class="btn btn-primary" style="border-radius: 0%;">Sign Up</button>
+            </div>
+        </div>
+    </form>
+    <div class="text-center">Already have an account? <a href="{% url 'member-login' %}">Login here</a></div>
+</div>
+
+
+
+
+{% endblock content %}
+
+
